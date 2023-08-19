@@ -1,0 +1,38 @@
+function somar(a:number,b:number):number{
+    return a+b;
+}
+function subtrair(a:number,b:number):number{
+    return a-b;
+}
+function despedir():string{
+    return "Até Logo";
+}
+
+export{
+    somar,subtrair,despedir
+}
+
+
+import PromptSync from "prompt-sync";
+import { somar, subtrair, despedir}from "./modelo";
+
+const prompt = PromptSync ()
+let escolha: string = prompt ("digite sua opção: ")
+
+
+
+
+switch(escolha){
+    case"somar":
+    let num1 = parseInt(prompt("digite o primeiro numero: "));
+    let num2 = parseInt(prompt("digite o segundo numero: "));
+    console.log(somar (num1,num2));
+    break;
+    case "subtrair":
+    let num3 = parseInt(prompt("digite o primeiro numero: "));
+    let num4 = parseInt(prompt("digite o segundo numero: "));
+    console.log(subtrair (num3,num4));
+    break;
+    case "despedir":
+        console.log(despedir())
+}
