@@ -1,0 +1,25 @@
+function resultado(arrey: number[]): number {
+    
+
+    if (arrey.length === 1) {
+        return Math.abs(arrey[0]);
+    }
+    
+    // Chamada recursiva para calcular o menor valor absoluto no subarray excluindo o primeiro elemento.
+    const b = resultado(arrey.slice(1));
+    
+    // Calcula o valor absoluto do primeiro elemento do array.
+    const a = Math.abs(arrey[0]);
+    
+    // Compara o valor absoluto do primeiro elemento com o menor valor absoluto no subarray.
+    if (a < b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
+
+const arrey: number[] = [7, -5, 3, -2, 10, -8];
+const menor: number = resultado(arrey);
+console.log("O menor valor absoluto do array é:", menor);
